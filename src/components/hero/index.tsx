@@ -1,20 +1,22 @@
 import { ChevronRight } from "lucide-react";
 const HeroSection = () => {
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] py-[72px]">
-      <div className="container">
+    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip ">
+      {/* Background Image */}
+      <div className="absolute h-[875px] w-[1250px] sm:w-[1536px] sm:h-[768px] md:w-[3900px] md:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)] top-[calc(100%-96px)]"></div>
+      <div className="container relative mx-auto ">
         {/* Header Alert */}
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center mb-8 px-4 w-full">
           <a
             href=""
-            className="inline-flex gap-1 sm:gap-3 border py-1 px-2 rounded-lg border-white/30 whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 border py-1.5 px-3 rounded-lg border-white/30 w-auto"
           >
-            <div className="bg-green-500 px-2 sm:px-3 rounded-lg my-1 flex justify-center items-center">
-              <span className="text-[10px] sm:text-xs font-bold text-black">
+            <div className="bg-green-500 px-2 py-1 rounded-lg flex items-center ">
+              <span className="text-[6px] font-bold text-black sm:text-xs">
                 ATTENTION
               </span>
             </div>
-            <span className="py-1 text-[10px] sm:text-sm md:text-base">
+            <span className="text-[7px] sm:text-xs md:text-sm lg:text-base">
               COACHES, AGENCIES & SERVICE-BASED BUSINESSES
             </span>
           </a>
@@ -33,7 +35,7 @@ const HeroSection = () => {
 
           {/* Video Container */}
           <div className="max-w-3xl mx-auto  mb-12">
-            <div className="rounded-lg overflow-hidden aspect-video px-2 pt-3 border-t border-l border-r border-white/30">
+            <div className="rounded-lg overflow-hidden aspect-video p-2 border border-white/30">
               <iframe
                 src="./Promo.mp4"
                 frameBorder="0"
@@ -45,21 +47,38 @@ const HeroSection = () => {
           </div>
 
           {/* Steps */}
-          <div className="space-y-4 mb-8">
-            <p className="text-md md:text-2xl">
-              <span className="text-yellow-500 font-bold">Step 1 of 2:</span>{" "}
-              Watch This Video
-            </p>
-            <p className="text-md md:text-2xl">
-              <span className="text-green-500 font-bold">Step 2 of 2:</span>{" "}
-              Schedule A Call
-            </p>
-          </div>
+          <p className="text-xl md:text-2xl mb-2 text-gray-300">
+            Your Next Steps Are:
+          </p>
+          <div className="flex  items-center justify-center gap-4 mb-16">
+            <div className="flex  items-center gap-3 bg-[#3e1a84]/10 rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2">
+                <div className="bg-[#fee370] w-6 h-6 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold text-[#3e1a84]">1</span>
+                </div>
+                <span className="text-md md:text-lg font-medium">
+                  Watch This Video
+                </span>
+              </div>
+            </div>
 
-          {/* CTA Button */}
-          <button className="bg-green-600 hover:bg-green-700 text-gray-100 font-bold py-4 px-8 rounded-xl transition-colors inline-flex items-center space-x-2">
-            <span>Schedule A Call</span>
-            <ChevronRight className="w-5 h-5" />
+            <div className="flex items-center gap-3 bg-[#3e1a84]/10 rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2">
+                <div className="bg-[#fee370] w-6 h-6 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold text-[#3e1a84]">2</span>
+                </div>
+                <span className="text-md md:text-lg font-medium">
+                  Schedule A Call
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* CTA Button */}
+        <div className="flex justify-center mt-8">
+          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium inline-flex items-center justify-center gap-1">
+            <span>Book A Call</span>
+            <ChevronRight />
           </button>
         </div>
       </div>
