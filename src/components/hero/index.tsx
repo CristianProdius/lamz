@@ -80,7 +80,7 @@ const HeroSection = () => {
         </div>
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium inline-flex items-center justify-center gap-1">
+          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105">
             <span>Book A Call</span>
             <ChevronRight />
           </button>
