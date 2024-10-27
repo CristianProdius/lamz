@@ -7,6 +7,7 @@ const VideoContainer = () => {
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(200px 200px at ${offsetX}px ${offsetY}px, black, transparent)`;
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
@@ -24,10 +25,7 @@ const VideoContainer = () => {
 
   return (
     <div className="max-w-3xl mx-auto mb-12">
-      <div
-        className="relative rounded-xl p-2 bg-black/20" // Added padding here
-        ref={containerRef}
-      >
+      <div className="relative rounded-xl p-2 bg-black/20" ref={containerRef}>
         <motion.div
           className="absolute inset-0 border-2 rounded-xl z-20"
           style={{
@@ -49,11 +47,11 @@ const VideoContainer = () => {
         />
         <div className="absolute inset-0 border border-white/30 rounded-xl z-10" />
         <div className="aspect-video rounded-lg overflow-hidden">
-          <iframe
-            src="./Promo.mp4"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
+          <video
+            src="/Promo.mp4" // Adjust this path as needed
+            controls
+            ref={videoRef}
+            onError={() => console.error("Video failed to load")}
             className="w-full h-full rounded-lg"
           />
         </div>
