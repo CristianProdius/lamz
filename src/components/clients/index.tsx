@@ -15,8 +15,8 @@ const Clients = () => {
   ];
 
   return (
-    <div className="py-8 bg-white md:py-12">
-      <div className="max-w-3xl mx-auto">
+    <div className="py-8 bg-black md:py-12">
+      <div className="max-w-3xl sm:max-w-5xl mx-auto">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
           <motion.div
             className="flex gap-14 flex-none pr-14"
@@ -32,7 +32,7 @@ const Clients = () => {
               <React.Fragment key={logo}>
                 <Image
                   src={`/clients/${logo}.png`}
-                  className="h-6 w-auto object-contain max-w-none"
+                  className="h-6 w-auto object-contain max-w-none "
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -45,7 +45,7 @@ const Clients = () => {
               <React.Fragment key={`second-${logo}`}>
                 <Image
                   src={`/clients/${logo}.png`}
-                  className="h-6 w-auto object-contain max-w-none"
+                  className="h-6 w-auto object-contain max-w-none "
                   width={0}
                   height={0}
                   sizes="100vw"

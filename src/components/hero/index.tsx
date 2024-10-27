@@ -1,7 +1,8 @@
 import { ChevronRight } from "lucide-react";
+import VideoContainer from "../videoContainer";
 const HeroSection = () => {
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip ">
+    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip px-2">
       {/* Background Image */}
       <div className="absolute h-[875px] w-[1250px] sm:w-[1536px] sm:h-[768px] md:w-[3900px] md:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)] top-[calc(100%-96px)]"></div>
       <div className="container relative mx-auto ">
@@ -17,34 +18,25 @@ const HeroSection = () => {
               </span>
             </div>
             <span className="text-[7px] sm:text-xs md:text-sm lg:text-base">
-              COACHES, AGENCIES & SERVICE-BASED BUSINESSES
+              Creators and Freelancers Only
             </span>
           </a>
         </div>
 
         {/* Main Content */}
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-            Install Our <span className="italic">BLAST</span> System To
-            Streamline Your Operations And Automate Manual Tasks
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-center text-4xl sm:text-6xl font-bold tracking-tighter">
+            Transform Your <span className="italic">Knowledge</span> Into A
+            Thriving Online Course Business
           </h1>
 
-          <p className="text-xl md:text-2xl mb-12 text-gray-300">
-            Completely done-for-you to start scaling within 7 days
+          <p className="text-xl md:text-2xl mb-12 text-gray-300 mt-4">
+            Create and launch your profitable online course in 30 days - no
+            following, no ads, guaranteed results
           </p>
 
           {/* Video Container */}
-          <div className="max-w-3xl mx-auto  mb-12">
-            <div className="rounded-lg overflow-hidden aspect-video p-2 border border-white/30">
-              <iframe
-                src="./Promo.mp4"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full rounded-lg"
-              ></iframe>
-            </div>
-          </div>
+          <VideoContainer />
 
           {/* Steps */}
           <p className="text-xl md:text-2xl mb-2 text-gray-300">
