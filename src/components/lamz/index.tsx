@@ -31,13 +31,17 @@ const TeamMember = () => {
               <h3 className="text-2xl font-bold">Hi, I'm Lamz</h3>
 
               <p className="text-gray-300">
-                From humble beginnings with his first agency at 17, Caleb
-                quickly delved into the art of streamlining business operations.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                cupiditate commodi magni nisi doloribus exercitationem dolor
+                quas! Quisquam, porro fugit. Rem dolorem deserunt id
+                voluptatibus ab cum libero similique veritatis?
               </p>
 
               <p className="text-gray-300">
-                This unique pathway led him to partnering with top agencies.
-                Caleb's now on a mission to solidify his place as{" "}
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aspernatur sunt et quis ab quae reprehenderit velit vitae
+                nesciunt porro explicabo ad corporis repellendus sapiente
+                cupiditate perspiciatis, minus commodi laborum voluptates.
                 <span className="font-semibold">
                   the go-to operations expert
                 </span>
