@@ -8,6 +8,7 @@ import HeroSection from "@/components/hero";
 import IncludedSection from "@/components/inlcuded";
 import SuccessSection from "@/components/SuccessSection";
 import TeamMember from "@/components/lamz";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <SuccessSection />
       <IncludedSection />
       <TeamMember />
+      <Testimonials />
       <Faq />
       <CTA />
       <Footer />
