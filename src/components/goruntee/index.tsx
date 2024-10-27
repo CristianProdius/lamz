@@ -1,8 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-
 import { motion, useAnimation, useInView } from "framer-motion";
-
 import TestimonialSection from "./testimonials";
 
 const Gurantee = () => {
@@ -43,12 +41,12 @@ const Gurantee = () => {
             }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Most course creators don't realize how much revenue potential is
-            lost through inefficient course creation and marketing systems. They
-            waste time and resources on scattered tactics that don't address the
-            fundamental issues—leaving them stuck with low enrollments and
-            unable to scale their course business. LAMZ Course Creation changes
-            that.
+            Most course creators don&apos;t realize how much revenue potential
+            is lost through inefficient course creation and marketing systems.
+            They waste time and resources on scattered tactics that don&apos;t
+            address the fundamental issues&mdash;leaving them stuck with low
+            enrollments and unable to scale their course business. LAMZ Course
+            Creation changes that.
           </motion.p>
 
           <motion.p

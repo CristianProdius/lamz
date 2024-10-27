@@ -25,7 +25,7 @@ const Feature = ({ title, description }: FeatureProps) => {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, []);
+  }, [offsetX, offsetY]);
   return (
     <div
       key={title}
