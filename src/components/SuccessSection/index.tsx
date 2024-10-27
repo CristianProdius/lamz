@@ -42,7 +42,7 @@ const features = [
     icon: <Users className="w-8 h-8" />,
     title: "Expert Support Team",
     description:
-      "We do course creation better than anyone else. You&apos;re in good hands.",
+      "We do course creation better than anyone else. You&apos;re in good hands",
   },
   {
     icon: <Puzzle className="w-8 h-8" />,
