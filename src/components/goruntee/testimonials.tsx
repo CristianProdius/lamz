@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-const clientPic = [
+export const clientPic = [
   { src: "/clientPicture/1.png", alt: "client" },
   { src: "/clientPicture/2.png", alt: "client" },
   { src: "/clientPicture/3.png", alt: "client" },
@@ -13,7 +13,7 @@ const clientPic = [
 ];
 
 // Star rating animation component
-const AnimatedStar = ({ delay }: { delay: number }) => {
+export const AnimatedStar = ({ delay }: { delay: number }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}

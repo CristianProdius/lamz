@@ -15,7 +15,7 @@ const Gurantee = () => {
   }, [isInView, controls]);
 
   return (
-    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5d2ca8] py-[72px] sm:py-24 px-2">
+    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5d2ca8] py-[72px] sm:py-24 px-4">
       <div className="container mx-auto" ref={ref}>
         <motion.div
           initial="hidden"

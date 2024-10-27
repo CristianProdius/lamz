@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 import VideoContainer from "../videoContainer";
 const HeroSection = () => {
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip px-2">
+    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip px-4">
       {/* Background Image */}
       <div className="absolute h-[875px] w-[1250px] sm:w-[1536px] sm:h-[768px] md:w-[3900px] md:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)] top-[calc(100%-96px)]"></div>
       <div className="container relative mx-auto ">

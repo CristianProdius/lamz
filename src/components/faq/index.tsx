@@ -88,12 +88,12 @@ const AccordionItem = ({
 
 const Faq = () => {
   return (
-    <div className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black py-[72px] px-2 sm:py-24">
+    <div className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black py-[72px] px-4 sm:py-24">
       <div className="container mx-auto">
         <h2 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter">
           Frequently asked questions
         </h2>
-        <div className="mt-12 max-w-2xl mx-auto">
+        <div className="mt-12 max-w-5xl mx-auto">
           {items.map(({ question, answer }, index) => (
             <AccordionItem key={index} question={question} answer={answer} />
           ))}
