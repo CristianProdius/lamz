@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { ChevronRight } from "lucide-react";
+
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Star } from "lucide-react";
+
 import TestimonialSection from "./testimonials";
 
 const Gurantee = () => {

@@ -2,7 +2,6 @@
 import { Plus } from "lucide-react";
 import { Minus } from "lucide-react";
 import React from "react";
-import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
