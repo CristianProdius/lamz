@@ -105,9 +105,9 @@ const IncludedSection = () => {
               </h3>
               <p className="text-white/80 text-lg mb-6">
                 We guarantee that we will not stop working with you until you
-                see results, so it's risk-free. Students get 3+ 1 on 1 weekly
-                coaching calls & access to a bustling course creation community.
-                That's about it.
+                see results, so it&apos;s risk-free. Students get 3+ 1 on 1
+                weekly coaching calls & access to a bustling course creation
+                community. That&apos;s about it.
               </p>
               <p className="text-white/80 text-lg">
                 If you want to transform your online course business from a

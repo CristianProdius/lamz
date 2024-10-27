@@ -42,13 +42,13 @@ const features = [
     icon: <Users className="w-8 h-8" />,
     title: "Expert Support Team",
     description:
-      "We do course creation better than anyone else. You're in good hands.",
+      "We do course creation better than anyone else. You&apos;re in good hands.",
   },
   {
     icon: <Puzzle className="w-8 h-8" />,
     title: "Platform Integration",
     description:
-      "Whatever platform you need connected, we'll configure and optimize it.",
+      "Whatever platform you need connected, we&apos;ll configure and optimize it.",
   },
   {
     icon: <Brain className="w-8 h-8" />,
@@ -95,7 +95,7 @@ const SuccessSection = () => {
             <span className="text-sm font-medium">🎯 HOW WE OPERATE</span>
           </div>
           <h2 className="text-center text-4xl sm:text-6xl font-bold tracking-tighter mb-4">
-            You Could Call Our Formula An "Unfair Advantage"
+            You Could Call Our Formula An &quot;Unfair Advantage&quot;
           </h2>
           <p className="text-xl text-white/60">
             Or, You Can Claim This Unfair Advantage For Your Own Course
@@ -129,8 +129,8 @@ const SuccessSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter mt-24 mb-16">
-            Recent Results We've Gotten For Creators & Freelancers Just Like
-            You:
+            Recent Results We&apos;ve Gotten For Creators & Freelancers Just
+            Like You:
           </h3>
 
           <div className="grid sm:grid-cols-3 gap-8">

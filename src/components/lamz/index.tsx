@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const TeamMember = () => {
   return (
@@ -28,7 +29,7 @@ const TeamMember = () => {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold">Hi, I'm Lamz</h3>
+              <h3 className="text-2xl font-bold">Hi, I&apos;m Lamz</h3>
 
               <p className="text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
@@ -50,10 +51,12 @@ const TeamMember = () => {
             </div>
 
             <div className="relative flex flex-end">
-              <img
+              <Image
                 src="/lamz.jpg"
                 alt="Team member portrait"
                 className="w-full max-w-[300px] rounded-lg"
+                width={300}
+                height={400}
               />
             </div>
           </div>
