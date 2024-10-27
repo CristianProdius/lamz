@@ -20,7 +20,7 @@ const VideoContainer = () => {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, []);
+  }, [offsetX, offsetY]);
 
   return (
     <div className="max-w-3xl mx-auto mb-12">
