@@ -5,6 +5,9 @@ import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Gurantee from "@/components/goruntee";
 import HeroSection from "@/components/hero";
+import IncludedSection from "@/components/inlcuded";
+import SuccessSection from "@/components/SuccessSection";
+import TeamMember from "@/components/lamz";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
 
       <Features />
       <Gurantee />
+      <SuccessSection />
+      <IncludedSection />
+      <TeamMember />
       <Faq />
       <CTA />
       <Footer />
