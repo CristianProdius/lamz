@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import React from "react";
 import Feature from "./feature";
 
