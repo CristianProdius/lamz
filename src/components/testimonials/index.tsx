@@ -11,7 +11,7 @@ export const testimonials = [
     username: "Fitness Coach",
   },
   {
-    text: "Their system helped me create and launch my first course without any following. Now I'm making $2,000/month passive income while I sleep.",
+    text: "Their system helped me create and launch my first course without any following. Now I&apos;m making $2,000/month passive income while I sleep.",
     imageSrc: "/avatar-2.png",
     name: "Michael T.",
     username: "Digital Artist",
@@ -29,7 +29,7 @@ export const testimonials = [
     username: "Business Coach",
   },
   {
-    text: "Their 1-on-1 coaching helped me optimize my course for marketplace success. I've gained over 2,000 students in just 6 weeks.",
+    text: "Their 1-on-1 coaching helped me optimize my course for marketplace success. I&apos;ve gained over 2,000 students in just 6 weeks.",
     imageSrc: "/avatar-5.png",
     name: "Emma R.",
     username: "Language Teacher",
@@ -41,7 +41,7 @@ export const testimonials = [
     username: "Tech Instructor",
   },
   {
-    text: "Their system for scaling courses across multiple marketplaces is genius. I'm now making consistent $3K/month without ads.",
+    text: "Their system for scaling courses across multiple marketplaces is genius. I&apos;m now making consistent $3K/month without ads.",
     imageSrc: "/avatar-7.png",
     name: "Mario M.",
     username: "Digital Creator",
@@ -132,8 +132,8 @@ export const Testimonials = () => {
 
         <div className="max-w-4xl mx-auto">
           <h2 className="text-center text-4xl sm:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-            Ain't Convinced Yet? <br />
-            Here's More Of Our Clients
+            Ain&apos;t Convinced Yet? <br />
+            Here&apos;s More Of Our Clients
           </h2>
           <p className="text-center text-xl leading-relaxed text-purple-100/90 tracking-tight">
             Form a learner to a creator

@@ -12,7 +12,7 @@ export const CTA = () => {
           Transform Your Knowledge Into a Thriving Online Course Business
         </h2>
         <p className="text-xl text-white/70 mt-5">
-          Join Over 7,000+ Course Creators Who've Built Profitable Courses
+          Join Over 7,000+ Course Creators Who&apos;ve Built Profitable Courses
           Without Ads or Following
         </p>
         <form
