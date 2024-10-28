@@ -9,6 +9,7 @@ import IncludedSection from "@/components/inlcuded";
 import SuccessSection from "@/components/SuccessSection";
 import TeamMember from "@/components/lamz";
 import { Testimonials } from "@/components/testimonials";
+import OnlineEducationGraph from "@/components/graph";
 
 export default function Home() {
   return (
@@ -20,9 +21,11 @@ export default function Home() {
       <Gurantee />
       <SuccessSection />
       <IncludedSection />
+      <OnlineEducationGraph />
       <TeamMember />
       <Testimonials />
       <Faq />
+
       <CTA />
       <Footer />
     </div>
