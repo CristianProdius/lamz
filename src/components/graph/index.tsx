@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const OnlineEducationGraph = () => {
   const data = [
@@ -12,12 +13,15 @@ const OnlineEducationGraph = () => {
   ];
   const maxRevenue = 500; // Fixed max value for better scaling
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
   return (
     <div className="bg-[#5d2ca8] px-4">
       <div className="flex flex-col items-center mb-4">
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: inView ? 1 : 0 }}
           className="inline-flex items-center bg-white/10 rounded-lg px-4 py-1.5"
         >
           <span className="text-sm font-medium text-white">
@@ -28,7 +32,10 @@ const OnlineEducationGraph = () => {
       <h2 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter text-white mb-12">
         The Future of Online Education
       </h2>
-      <div className="max-w-5xl mx-auto p-6 bg-white/5 backdrop-blur-sm border border-[rgba(255,255,255,0.1)] rounded-lg shadow-lg">
+      <div
+        ref={ref}
+        className="max-w-5xl mx-auto p-6 bg-white/5 backdrop-blur-sm border border-[rgba(255,255,255,0.1)] rounded-lg shadow-lg"
+      >
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-white">
             Online Education Market Revenue Worldwide
@@ -52,7 +59,7 @@ const OnlineEducationGraph = () => {
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: inView ? 1 : 0 }}
               transition={{ duration: 1 }}
             >
               <defs>
@@ -94,7 +101,7 @@ const OnlineEducationGraph = () => {
                 fill="url(#lineGradient)"
                 opacity="0.1"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.1 }}
+                animate={{ opacity: inView ? 0.1 : 0 }}
                 transition={{ duration: 1 }}
               />
               {/* Line */}
@@ -114,7 +121,7 @@ const OnlineEducationGraph = () => {
                 strokeWidth="0.5"
                 filter="url(#glow)"
                 initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
+                animate={{ pathLength: inView ? 1 : 0 }}
                 transition={{ duration: 2, ease: "easeInOut" }}
               />
               {/* Data points */}
@@ -127,7 +134,7 @@ const OnlineEducationGraph = () => {
                   fill="#fff"
                   filter="url(#glow)"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={{ opacity: inView ? 1 : 0 }}
                   transition={{ delay: 2 + index * 0.1 }}
                   whileHover={{ r: 2 }}
                 />
