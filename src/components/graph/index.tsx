@@ -10,33 +10,34 @@ const OnlineEducationGraph = () => {
     { year: "2027", revenue: 400 },
     { year: "2030", revenue: 475 },
   ];
+  const maxRevenue = 500; // Fixed max value for better scaling
 
   return (
-    <div className="bg-[#5d2ca8]">
+    <div className="bg-[#5d2ca8] px-4">
       <div className="flex flex-col items-center mb-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="inline-flex items-center bg-white/10 rounded-lg px-4 py-1.5"
         >
-          <span className="text-sm font-medium text-white ">
-            HTe Online Educatioan
+          <span className="text-sm font-medium text-white">
+            Online Education
           </span>
         </motion.div>
       </div>
-      <h2 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter text-white mb-24">
-        Here is what you get in the program
+      <h2 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter text-white mb-12">
+        The Future of Online Education
       </h2>
-      <div className="max-w-5xl mx-auto p-6  bg-white backdrop-blur-sm border border-[rgba(255,255,255,0.1)] rounded-lg shadow-lg">
+      <div className="max-w-5xl mx-auto p-6 bg-white/5 backdrop-blur-sm border border-[rgba(255,255,255,0.1)] rounded-lg shadow-lg">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-2xl font-bold text-white">
             Online Education Market Revenue Worldwide
           </h2>
-          <p className="text-sm text-gray-500">Revenue in billion US$</p>
+          <p className="text-sm text-gray-300">Revenue in billion US$</p>
         </div>
         <div className="relative h-96">
           {/* Y-axis */}
-          <div className="absolute left-0 h-full w-12 flex flex-col justify-between text-sm text-gray-600">
+          <div className="absolute left-0 h-full w-12 flex flex-col justify-between text-sm text-gray-300">
             <span>500B</span>
             <span>400B</span>
             <span>300B</span>
@@ -44,56 +45,102 @@ const OnlineEducationGraph = () => {
             <span>100B</span>
             <span>0</span>
           </div>
-          {/* Graph Area */}
-          <div className="ml-12 h-full flex items-end">
-            <div className="flex items-end justify-between w-full h-full">
-              {data.map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  className="w-1/6 mx-1"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{
-                    opacity: 1,
-                    height: `${(item.revenue / 500) * 100}%`,
-                  }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.2,
-                    ease: "easeOut",
-                  }}
+          {/* Graph Area - SVG Line Chart */}
+          <div className="relative ml-12 h-full w-[calc(100%-3rem)]">
+            <motion.svg
+              className="absolute inset-0 w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <defs>
+                <linearGradient
+                  id="lineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
                 >
-                  <motion.div
-                    className="bg-blue-600 rounded-t-lg w-full h-full"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <motion.div
-                      className="text-xs text-white text-center pt-2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.2 + 0.4 }}
-                    >
-                      {item.revenue}B
-                    </motion.div>
-                  </motion.div>
-                  <div className="text-xs text-center mt-2">{item.year}</div>
-                </motion.div>
+                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#6366f1" stopOpacity="0.05" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feFlood floodColor="#6366f1" floodOpacity="0.5" />
+                  <feComposite in2="blur" operator="in" />
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              {/* Area under the line */}
+              <motion.path
+                d={`
+                  M 0 ${100 - (data[0].revenue / maxRevenue) * 100}
+                  ${data
+                    .map((item, index) => {
+                      const x = (index / (data.length - 1)) * 100;
+                      const y = 100 - (item.revenue / maxRevenue) * 100;
+                      return `L ${x} ${y}`;
+                    })
+                    .join(" ")}
+                  L 100 100
+                  L 0 100
+                  Z
+                `}
+                fill="url(#lineGradient)"
+                opacity="0.1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.1 }}
+                transition={{ duration: 1 }}
+              />
+              {/* Line */}
+              <motion.path
+                d={`
+                  M 0 ${100 - (data[0].revenue / maxRevenue) * 100}
+                  ${data
+                    .map((item, index) => {
+                      const x = (index / (data.length - 1)) * 100;
+                      const y = 100 - (item.revenue / maxRevenue) * 100;
+                      return `L ${x} ${y}`;
+                    })
+                    .join(" ")}
+                `}
+                fill="none"
+                stroke="#fff"
+                strokeWidth="0.5"
+                filter="url(#glow)"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+              {/* Data points */}
+              {data.map((item, index) => (
+                <motion.circle
+                  key={item.year}
+                  cx={`${(index / (data.length - 1)) * 100}`}
+                  cy={`${100 - (item.revenue / maxRevenue) * 100}`}
+                  r="1"
+                  fill="#fff"
+                  filter="url(#glow)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2 + index * 0.1 }}
+                  whileHover={{ r: 2 }}
+                />
               ))}
-            </div>
+            </motion.svg>
+          </div>
+          {/* X-axis labels */}
+          <div className="absolute bottom-0 left-12 right-0 flex justify-between text-sm text-gray-300">
+            {data.map((item) => (
+              <span key={item.year}>{item.year}</span>
+            ))}
           </div>
         </div>
-        {/* Legend with animation */}
-        <motion.div
-          className="mt-8 text-sm text-gray-600"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5 }}
-        >
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-600 rounded mr-2"></div>
-            <span>Revenue in billion US$</span>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
