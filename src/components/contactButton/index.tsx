@@ -15,7 +15,7 @@ const ContactButton = ({ text }: ContactButtonProps) => {
   return (
     <button
       onClick={handleClick}
-      className="bg-white text-black py-3 px-5 rounded-lg font-medium inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105 mx-auto"
+      className="bg-white text-black py-3 px-5 sm:px-6 sm:py-5 text-lg rounded-lg font-medium inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105 mx-auto"
     >
       <span>{text}</span>
       <ChevronRight />

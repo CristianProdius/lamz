@@ -1,9 +1,13 @@
 "use client";
-
+import { ChevronRight } from "lucide-react";
 import VideoContainer from "../videoContainer";
-import ContactButton from "../contactButton";
-
+import { useRouter } from "next/navigation";
 const HeroSection = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/contact");
+  };
   return (
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip px-4">
       {/* Background Image */}
@@ -75,7 +79,13 @@ const HeroSection = () => {
         </div>
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <ContactButton text="Book a Call" />
+          <button
+            onClick={handleClick}
+            className="bg-white text-black sm:text-xl py-3 px-4 sm:py-5 sm:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+          >
+            <span>Book A Call</span>
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </div>

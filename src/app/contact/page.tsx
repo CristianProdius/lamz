@@ -10,9 +10,9 @@ export default function Contact() {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Let's Transform Your Knowledge Into A Course
+              Let&apos;s Transform Your Knowledge Into A Course
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
               Schedule a free consultation to discuss your course creation
               journey
             </p>
