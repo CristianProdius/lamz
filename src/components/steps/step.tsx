@@ -3,13 +3,14 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
-interface FeatureProps {
+interface StepProps {
   title: string;
+  subtitle: string;
   description: string;
-  icon: React.ReactNode; // Changed to ReactNode
+  step: number;
 }
 
-const Feature = ({ title, description, icon }: FeatureProps) => {
+const Step = ({ subtitle, description, step }: StepProps) => {
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(100px 100px at ${offsetX}px ${offsetY}px, black, transparent`;
@@ -29,25 +30,27 @@ const Feature = ({ title, description, icon }: FeatureProps) => {
   }, [offsetX, offsetY]);
 
   return (
-    <div
-      key={title}
-      className="border border-white/30 px-5 py-10 text-center rounded-xl sm:flex-1 relative"
-    >
+    <div className="relative rounded-3xl bg-purple-900/50 p-8 backdrop-blur-sm">
       <motion.div
-        className="absolute inset-0 border-2 border-purple-400 rounded-xl"
+        className="absolute inset-0 rounded-3xl border-2 border-white/50"
         style={{
           WebkitMaskImage: maskImage,
           maskImage: maskImage,
+          boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
         }}
         ref={border}
       ></motion.div>
-      <div className="inline-flex h-14 w-14 bg-white text-black justify-center items-center rounded-lg">
-        {icon}
+
+      <div className="flex flex-col items-center text-center space-y-4">
+        <h3 className="text-2xl font-bold text-white">Step 0{step}</h3>
+        <h4 className="text-xl font-semibold text-white/90">{subtitle}</h4>
+        <div className="mt-2">
+          <p className="text-lg font-medium text-white/80 mb-2">Outcome:</p>
+          <p className="text-white/80">{description}</p>
+        </div>
       </div>
-      <h3 className="mt-6 font-bold">{title}</h3>
-      <p className="mt-2 text-white/70">{description}</p>
     </div>
   );
 };
 
-export default Feature;
+export default Step;

@@ -10,6 +10,7 @@ import SuccessSection from "@/components/SuccessSection";
 import TeamMember from "@/components/lamz";
 import { Testimonials } from "@/components/testimonials";
 import OnlineEducationGraph from "@/components/graph";
+import Phases from "@/components/steps";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <SuccessSection />
       <IncludedSection />
       <OnlineEducationGraph />
+      <Phases />
       <TeamMember />
       <Testimonials />
       <Faq />
