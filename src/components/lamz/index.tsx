@@ -33,7 +33,7 @@ const TeamMember = () => {
 
               <p className="text-gray-300">
                 I&apos;m Lambros Lazopoulos (LAMZ), helping experts turn their
-                knowledge into profitable online courses. With over 25,000
+                knowledge into profitable online courses. With over 60,000
                 students worldwide, I&apos;ve built a successful Course Creation
                 Academy that transforms teachers into entrepreneurs.
               </p>
