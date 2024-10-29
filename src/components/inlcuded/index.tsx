@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // Create a reusable card component with the glow effect
 const GlowingCard = ({
@@ -46,6 +47,12 @@ const GlowingCard = ({
 };
 
 const IncludedSection = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/contact");
+  };
+
   const features = [
     "Set proper foundations in your course creation business.",
     "Combine your passion and expertise with a profitable niche & create an in-demand course.",
@@ -121,6 +128,7 @@ const IncludedSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="w-full bg-white text-black py-4 px-8 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all"
+              onClick={handleClick}
             >
               Schedule A Call →
             </motion.button>

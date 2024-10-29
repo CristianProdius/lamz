@@ -2,7 +2,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import ContactButton from "../contactButton";
 import Image from "next/image";
 
 export const clientPic = [
@@ -39,9 +39,9 @@ const TestimonialSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <button className="bg-white text-black py-4 px-8 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
-            Book A Call <ChevronRight className="w-5 h-5" />
-          </button>
+          <div className="">
+            <ContactButton text="Book a Call" />
+          </div>
           <div className="flex flex-col items-center mt-5">
             <div className="flex flex-col sm:flex-row items-center gap-4 px-4">
               <div className="flex -space-x-3">

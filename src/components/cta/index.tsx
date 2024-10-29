@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { AnimatedStar } from "../goruntee/testimonials";
 import { clientPic } from "../goruntee/testimonials";
+import ContactButton from "../contactButton";
 
 export const CTA = () => {
   return (
@@ -15,14 +16,9 @@ export const CTA = () => {
           Join Over 7,000+ Course Creators Who&apos;ve Built Profitable Courses
           Without Ads or Following
         </p>
-        <form
-          action=""
-          className="mt-10 flex flex-col gap-2.5 px-4 max-w-lg mx-auto sm:flex-row "
-        >
-          <button className="bg-white text-black h-12 rounded-lg px-5  mx-auto">
-            Start My Course Empire Today
-          </button>
-        </form>
+        <div className="mt-10 flex flex-col gap-2.5 px-4 max-w-lg mx-auto sm:flex-row ">
+          <ContactButton text="Start My Course Impire Today" />
+        </div>
         <div className="flex flex-col items-center mt-8">
           <div className="flex flex-col sm:flex-row items-center gap-4 px-4">
             <div className="flex -space-x-3">
