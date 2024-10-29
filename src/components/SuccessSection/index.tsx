@@ -88,8 +88,46 @@ const features = [
 
 const SuccessSection = () => {
   return (
-    <section className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black py-[72px] px-4 sm:py-24">
+    <section className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black   px-4 ">
       <div className="container mx-auto max-w-5xl">
+        <div className="pb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="py-12"
+          >
+            <h3 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter  mb-16">
+              Recent Results We&apos;ve Gotten For Creators & Freelancers Just
+              Like You:
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-8">
+              {successStories.map((story, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="flex flex-col gap-6"
+                >
+                  <div className="aspect-video rounded-xl overflow-hidden bg-[#3b1c6a] shadow-lg">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      poster={story.thumbnail}
+                    >
+                      <source src={story.videoSrc} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <h4 className="text-md  text-center">{story.achievement}</h4>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-white/10 rounded-lg px-4 py-1.5 mb-8">
             <span className="text-sm font-medium">🎯 HOW WE OPERATE</span>
@@ -121,43 +159,6 @@ const SuccessSection = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter mt-24 mb-16">
-            Recent Results We&apos;ve Gotten For Creators & Freelancers Just
-            Like You:
-          </h3>
-
-          <div className="grid sm:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="flex flex-col gap-6"
-              >
-                <div className="aspect-video rounded-xl overflow-hidden bg-[#3b1c6a] shadow-lg">
-                  <video
-                    className="w-full h-full object-cover"
-                    controls
-                    poster={story.thumbnail}
-                  >
-                    <source src={story.videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <h4 className="text-md  text-center">{story.achievement}</h4>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

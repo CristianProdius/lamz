@@ -32,23 +32,16 @@ const TeamMember = () => {
               <h3 className="text-2xl font-bold">Hi, I&apos;m Lamz</h3>
 
               <p className="text-gray-300">
-                I&apos;m Lambros Lazopoulos, known as LAMZ, a successful course
-                creator. I&apos;ve built an educational platform that helps
-                people turn their expertise into profitable online teaching
-                careers. With over 25,000 students, I&apos;ve established myself
-                as an authority in making teaching a viable side hustle through
-                my Course Creation Academy.
+                I'm Lambros Lazopoulos (LAMZ), helping experts turn their
+                knowledge into profitable online courses. With over 25,000
+                students worldwide, I've built a successful Course Creation
+                Academy that transforms teachers into entrepreneurs.
               </p>
 
               <p className="text-gray-300">
-                Through my academy, I offer intensive support with weekly
-                one-on-one coaching calls and a vibrant course creation
-                community. My business transformed when I moved from Skillshare
-                to my own platform, using strategies like email marketing
-                automation, high-converting funnels, and a strong social media
-                presence on YouTube and TikTok. My expertise in course creation
-                and business development has made me a respected figure in
-                online education.
+                Through proven strategies and direct coaching, I guide creators
+                from marketplace platforms to building their own thriving course
+                businesses.
               </p>
             </div>
 
