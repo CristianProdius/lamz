@@ -1,5 +1,8 @@
-import { ChevronRight } from "lucide-react";
+"use client";
+
 import VideoContainer from "../videoContainer";
+import ContactButton from "../contactButton";
+
 const HeroSection = () => {
   return (
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px]  relative overflow-clip px-4">
@@ -72,10 +75,7 @@ const HeroSection = () => {
         </div>
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105">
-            <span>Book A Call</span>
-            <ChevronRight />
-          </button>
+          <ContactButton text="Book a Call" />
         </div>
       </div>
     </div>
