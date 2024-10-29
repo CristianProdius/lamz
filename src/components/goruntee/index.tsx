@@ -2,8 +2,9 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import TestimonialSection from "./testimonials";
+import Link from "next/link"; // Import Link instead of useRouter
 
-const Gurantee = () => {
+const Guarantee = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
   const controls = useAnimation();
@@ -14,75 +15,84 @@ const Gurantee = () => {
     }
   }, [isInView, controls]);
 
+  const cards = [
+    {
+      title: "Start Scaling Your Course Empire",
+      isHeading: true,
+    },
+    {
+      text: "Most course creators don't realize how much revenue potential is lost through inefficient course creation and marketing systems.",
+      icon: "📊",
+    },
+    {
+      text: "They waste time and resources on scattered tactics that don't address the fundamental issues—leaving them stuck with low enrollments and unable to scale their course business. Course Creation Academy changes that.",
+      icon: "🎯",
+    },
+    {
+      text: "We go well beyond basic course creation: we transform your entire educational business infrastructure.",
+      icon: "🚀",
+    },
+    {
+      text: "From content development to student acquisition and engagement, our proven framework revolutionizes how your online course business performs.",
+      icon: "⚡",
+    },
+    {
+      text: "Win back your time, maximize your impact, and unlock sustainable course income.",
+      icon: "💎",
+    },
+  ];
+
   return (
-    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5d2ca8] py-[72px] sm:py-24 px-4">
-      <div className="container mx-auto" ref={ref}>
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#3a1c68] to-[#5d2ca8] py-20 px-6">
+      <div className="container mx-auto max-w-7xl" ref={ref}>
+        {cards.map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={controls}
+            variants={{
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className={`mb-6 ${card.isHeading ? "" : "max-w-4xl mx-auto"}`}
+          >
+            {card.isHeading ? (
+              <h2 className="text-5xl md:text-7xl font-bold text-center text-white tracking-tight leading-[1.2] pb-8 mb-12">
+                {card.title}
+              </h2>
+            ) : (
+              <div className="backdrop-blur-sm bg-white/5 rounded-2xl p-8 shadow-xl border border-purple-500/20 transform hover:scale-[1.02] transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl">{card.icon}</span>
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                    {card.text}
+                  </p>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        ))}
+
         <motion.div
-          initial="hidden"
+          initial={{ opacity: 0, y: 30 }}
           animate={controls}
           variants={{
-            hidden: { opacity: 0, y: 30 },
             visible: { opacity: 1, y: 0 },
           }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: cards.length * 0.2 }}
+          className="mt-12 text-center"
         >
-          <h2 className="text-center text-4xl sm:text-6xl font-bold tracking-tighter">
-            Start Scaling Your Course Empire
-          </h2>
+          <Link href="/contact">
+            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg text-lg font-semibold text-white hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-purple-500/50">
+              Book a Call
+            </button>
+          </Link>
         </motion.div>
-        <div className="max-w-6xl mx-auto mt-8">
-          <motion.p
-            className="text-lg sm:text-xl text-center text-white/80 mt-6"
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Most course creators don&apos;t realize how much revenue potential
-            is lost through inefficient course creation and marketing systems.
-            They waste time and resources on scattered tactics that don&apos;t
-            address the fundamental issues&mdash;leaving them stuck with low
-            enrollments and unable to scale their course business. LAMZ Course
-            Creation changes that.
-          </motion.p>
 
-          <motion.p
-            className="text-lg sm:text-xl text-center text-white/80 mt-6"
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            We go well beyond basic course creation: we transform your entire
-            educational business infrastructure. From content development to
-            student acquisition and engagement, our proven framework
-            revolutionizes how your online course business performs.
-          </motion.p>
-          <motion.p
-            className="text-lg sm:text-xl text-center text-white/80 mt-6"
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Win back your time, maximize your impact, and unlock sustainable
-            course income. Book a call now and let us build a proven,
-            student-focused system that supports your teaching empire.
-          </motion.p>
-        </div>
         <TestimonialSection />
       </div>
     </div>
   );
 };
 
-export default Gurantee;
+export default Guarantee;

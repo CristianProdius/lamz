@@ -2,7 +2,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import ContactButton from "../contactButton";
+
 import Image from "next/image";
 
 export const clientPic = [
@@ -32,16 +32,13 @@ export const AnimatedStar = ({ delay }: { delay: number }) => {
 const TestimonialSection = () => {
   return (
     <div className="container">
-      <div className="flex flex-col items-center gap-6 mt-12">
+      <div className="flex flex-col items-center gap-6  mt-2">
         <motion.div
           className="flex flex-col items-center gap-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="">
-            <ContactButton text="Book a Call" />
-          </div>
           <div className="flex flex-col items-center mt-5">
             <div className="flex flex-col sm:flex-row items-center gap-4 px-4">
               <div className="flex -space-x-3">
