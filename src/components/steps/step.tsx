@@ -2,12 +2,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { motion, useMotionTemplate, useSpring } from "framer-motion";
 
 interface StepProps {
   title: string;

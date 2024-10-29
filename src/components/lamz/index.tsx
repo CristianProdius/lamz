@@ -32,9 +32,9 @@ const TeamMember = () => {
               <h3 className="text-2xl font-bold">Hi, I&apos;m Lamz</h3>
 
               <p className="text-gray-300">
-                I'm Lambros Lazopoulos (LAMZ), helping experts turn their
+                I&apos;m Lambros Lazopoulos (LAMZ), helping experts turn their
                 knowledge into profitable online courses. With over 25,000
-                students worldwide, I've built a successful Course Creation
+                students worldwide, I&apos;ve built a successful Course Creation
                 Academy that transforms teachers into entrepreneurs.
               </p>
 
