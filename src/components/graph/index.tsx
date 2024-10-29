@@ -1,17 +1,16 @@
-"use client";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 const OnlineEducationGraph = () => {
   const data = [
-    { year: "2022", revenue: 217 },
-    { year: "2023", revenue: 250 },
-    { year: "2024", revenue: 300 },
-    { year: "2025", revenue: 350 },
-    { year: "2027", revenue: 400 },
-    { year: "2030", revenue: 475 },
+    { year: "2022", revenue: 185.2 },
+    { year: "2023", revenue: 205.4 },
+    { year: "2024", revenue: 250.6 },
+    { year: "2025", revenue: 290.8 },
+    { year: "2027", revenue: 350.2 },
+    { year: "2030", revenue: 475.0 },
   ];
-  const maxRevenue = 500; // Fixed max value for better scaling
+  const maxRevenue = 500;
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -60,7 +59,7 @@ const OnlineEducationGraph = () => {
               preserveAspectRatio="none"
               initial={{ opacity: 0 }}
               animate={{ opacity: inView ? 1 : 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 4 }}
             >
               <defs>
                 <linearGradient
@@ -70,12 +69,12 @@ const OnlineEducationGraph = () => {
                   x2="0%"
                   y2="100%"
                 >
-                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#6366f1" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="#8BB4FF" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#8BB4FF" stopOpacity="0.1" />
                 </linearGradient>
                 <filter id="glow">
-                  <feGaussianBlur stdDeviation="2" result="blur" />
-                  <feFlood floodColor="#6366f1" floodOpacity="0.5" />
+                  <feGaussianBlur stdDeviation="1.5" result="blur" />
+                  <feFlood floodColor="#8BB4FF" floodOpacity="0.6" />
                   <feComposite in2="blur" operator="in" />
                   <feMerge>
                     <feMergeNode />
@@ -99,10 +98,10 @@ const OnlineEducationGraph = () => {
                   Z
                 `}
                 fill="url(#lineGradient)"
-                opacity="0.1"
+                opacity="0.3"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: inView ? 0.1 : 0 }}
-                transition={{ duration: 1 }}
+                animate={{ opacity: inView ? 0.3 : 0 }}
+                transition={{ duration: 1.5 }}
               />
               {/* Line */}
               <motion.path
@@ -117,8 +116,8 @@ const OnlineEducationGraph = () => {
                     .join(" ")}
                 `}
                 fill="none"
-                stroke="#fff"
-                strokeWidth="0.5"
+                stroke="#8BB4FF"
+                strokeWidth="1"
                 filter="url(#glow)"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: inView ? 1 : 0 }}
@@ -131,13 +130,19 @@ const OnlineEducationGraph = () => {
                   cx={`${(index / (data.length - 1)) * 100}`}
                   cy={`${100 - (item.revenue / maxRevenue) * 100}`}
                   r="1"
-                  fill="#fff"
-                  filter="url(#glow)"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: inView ? 1 : 0 }}
-                  transition={{ delay: 2 + index * 0.1 }}
-                  whileHover={{ r: 2 }}
-                />
+                  fill="#8BB4FF"
+                  style={{ filter: "none" }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: inView ? 1 : 0, scale: 1 }}
+                  transition={{ delay: 2 + index * 0.1, duration: 0.5 }}
+                  whileHover={{
+                    r: 2,
+                    fill: "#A9C7FF",
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <title>{`${item.year}: $${item.revenue}B`}</title>
+                </motion.circle>
               ))}
             </motion.svg>
           </div>

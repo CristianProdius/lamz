@@ -6,6 +6,19 @@ import { InlineWidget } from "react-calendly";
 export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
+      <style jsx global>{`
+        html,
+        body {
+          overflow: auto;
+          scrollbar-width: none; /* Firefox */
+        }
+
+        /* For Chrome, Safari, and Edge */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
       <div className="flex-grow bg-gradient-to-b from-[#5d2ca8] via-[#3e1a84] to-black">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
           <div className="text-center mb-16">

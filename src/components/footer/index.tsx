@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-8">
         <div className="flex flex-col sm:flex-row sm:justify-between gap-4 items-center">
           <div className="text-center text-sm sm:text-base hover:text-white/80 transition-colors duration-300">
-            © 2024 Lamz Course Creation, LLC. All rights reserved
+            © 2024 Course Creation Academy, LLC. All rights reserved
           </div>
           <ul className="flex justify-center gap-6">
             <li>
