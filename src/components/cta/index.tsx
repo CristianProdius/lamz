@@ -17,7 +17,7 @@ export const CTA = () => {
           Without Ads or Following
         </p>
         <div className="mt-10 flex flex-col gap-2.5 px-4 max-w-lg mx-auto sm:flex-row ">
-          <ContactButton text="Start My Course Impire Today" />
+          <ContactButton text="Start My Course Empire Today" />
         </div>
         <div className="flex flex-col items-center mt-8">
           <div className="flex flex-col sm:flex-row items-center gap-4 px-4">
