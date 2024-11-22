@@ -89,7 +89,10 @@ const VideoContainer = () => {
                 muted={isMuted}
                 onClick={togglePlay}
               >
-                <source src="/Promo.mp4" type="video/mp4" />
+                <source
+                  src="https://drive.google.com/uc?export=download&id=1J1KgiZ14JJV19eCtBrsls_hd3fWMfhvg"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </motion.video>
               <div className="absolute bottom-4 right-4 flex gap-2">
