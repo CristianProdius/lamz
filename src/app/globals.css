@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.no-skip::-webkit-media-controls-timeline,
+.no-skip::-webkit-media-controls-current-time-display,
+.no-skip::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+
