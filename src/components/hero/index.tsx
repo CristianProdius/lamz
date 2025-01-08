@@ -1,7 +1,6 @@
 "use client";
 import { ChevronRight } from "lucide-react";
 import VideoContainer from "../videoContainer";
-import { useState } from "react";
 
 interface HeroSectionProps {
   onOpenModal: () => void;

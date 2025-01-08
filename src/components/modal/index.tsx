@@ -133,7 +133,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
                 </p>
                 
                 <h2 className="text-2xl font-bold text-center text-white mb-6 leading-tight">
-                  Learn the New, Rapidly-Scalable Business Model That's Creating the Next Wave of Young Millionaires
+                  Learn the New, Rapidly-Scalable Business Model That&apos;s Creating the Next Wave of Young Millionaires
                 </h2>
 
                 <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden">
