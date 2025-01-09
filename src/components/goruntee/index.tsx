@@ -2,9 +2,12 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import TestimonialSection from "./testimonials";
-import Link from "next/link"; // Import Link instead of useRouter
 
-const Guarantee = () => {
+interface GuaranteeProps {
+  onOpenModal: () => void;
+}
+
+const Guarantee = ({ onOpenModal }: GuaranteeProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
   const controls = useAnimation();
@@ -82,11 +85,12 @@ const Guarantee = () => {
           transition={{ duration: 0.6, delay: cards.length * 0.2 }}
           className="mt-12 text-center"
         >
-          <Link href="/contact">
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg text-lg font-semibold text-white hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-purple-500/50">
-              Book a Call
-            </button>
-          </Link>
+          <button
+            onClick={onOpenModal}
+            className="bg-white text-black sm:text-xl py-3 px-4 sm:py-5 sm:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+          >
+            <span>Watch Free Training</span>
+          </button>
         </motion.div>
 
         <TestimonialSection />

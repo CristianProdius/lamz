@@ -29,7 +29,7 @@ const Features = () => {
     <div className="bg-black text-white px-4 py-8 sm:py-24">
       <div className="container max-w-5xl mx-auto">
         <h2 className="text-center text-4xl sm:text-6xl font-bold tracking-tighter">
-          What You Will Learn On Your Free Discovery Call
+          What you Will Learn on your Free Training
         </h2>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4">

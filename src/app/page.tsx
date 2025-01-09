@@ -40,21 +40,18 @@ export default function Home() {
       <HeroSection onOpenModal={handleModalOpen} />
       <Clients />
       <Features />
-      <Gurantee />
+      <Gurantee onOpenModal={handleModalOpen} />
       <SuccessSection />
-      <IncludedSection />
+      <IncludedSection onOpenModal={handleModalOpen} />
       <OnlineEducationGraph />
       <Phases />
       <TeamMember />
       <Testimonials />
       <Faq />
-      <CTA />
+      <CTA onOpenModal={handleModalOpen} />
       <Footer />
-      
-      <Modal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

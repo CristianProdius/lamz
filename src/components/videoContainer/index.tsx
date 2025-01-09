@@ -2,11 +2,26 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const VideoContainer = () => {
+interface VideoContainerProps {
+  previewSrc: string;
+  mainVideoSrc: string;
+  isYoutube?: boolean;
+}
+
+const VideoContainer: React.FC<VideoContainerProps> = ({
+  previewSrc,
+  mainVideoSrc,
+  isYoutube = false,
+}) => {
   const [showVideo, setShowVideo] = useState(false);
 
-  const handleClick = () => {
-    setShowVideo(true);
+  const getYoutubeEmbedUrl = (url: string) => {
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11
+      ? `https://www.youtube.com/embed/${match[2]}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0`
+      : url;
   };
 
   return (
@@ -28,31 +43,68 @@ const VideoContainer = () => {
       >
         <div className="aspect-video rounded-lg overflow-hidden bg-black/40 relative">
           {!showVideo ? (
-            <div 
-              className="w-full h-full cursor-pointer" 
-              onClick={handleClick}
+            <div
+              className="w-full h-full cursor-pointer relative"
+              onClick={() => setShowVideo(true)}
             >
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/preview.mp4" type="video/mp4" />
-              </video>
+              {isYoutube ? (
+                <img
+                  src={
+                    previewSrc ||
+                    `https://img.youtube.com/vi/${
+                      mainVideoSrc.split("v=")[1]
+                    }/maxresdefault.jpg`
+                  }
+                  alt="Video thumbnail"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src={previewSrc} type="video/mp4" />
+                </video>
+              )}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/40 transition-colors">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-purple-600"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
-            <video
-              className="w-full h-full no-skip"
-              autoPlay
-              controls
-              playsInline
-              controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
-              style={{ pointerEvents: 'auto' }}
-            >
-              <source src="/main.mp4" type="video/mp4" />
-            </video>
+            <>
+              {isYoutube ? (
+                <iframe
+                  className="w-full h-full"
+                  src={getYoutubeEmbedUrl(mainVideoSrc)}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video
+                  className="w-full h-full no-skip"
+                  autoPlay
+                  controls
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+                  style={{ pointerEvents: "auto" }}
+                >
+                  <source src={mainVideoSrc} type="video/mp4" />
+                </video>
+              )}
+            </>
           )}
         </div>
       </motion.div>

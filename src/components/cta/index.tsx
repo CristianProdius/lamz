@@ -3,9 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { AnimatedStar } from "../goruntee/testimonials";
 import { clientPic } from "../goruntee/testimonials";
-import ContactButton from "../contactButton";
 
-export const CTA = () => {
+interface CTAProps {
+  onOpenModal: () => void;
+}
+
+export const CTA = ({ onOpenModal }: CTAProps) => {
   return (
     <div className="bg-black text-white py-[72px] text-center sm:py-24">
       <div className="container max-w-5xl mx-auto">
@@ -16,9 +19,14 @@ export const CTA = () => {
           Join Over 7,000+ Course Creators Who&apos;ve Built Profitable Courses
           Without Ads or Following
         </p>
-        <div className="mt-10 flex flex-col gap-2.5 px-4 max-w-lg mx-auto sm:flex-row ">
-          <ContactButton text="Start My Course Empire Today" />
-        </div>
+
+        <button
+          onClick={onOpenModal}
+          className="bg-white text-black sm:text-xl py-3 px-4 sm:py-5 sm:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105 mt-12"
+        >
+          <span>Watch Free Training</span>
+        </button>
+
         <div className="flex flex-col items-center mt-8">
           <div className="flex flex-col sm:flex-row items-center gap-4 px-4">
             <div className="flex -space-x-3">

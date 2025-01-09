@@ -1,11 +1,12 @@
 "use client";
-import { motion, AnimatePresence } from 'framer-motion';
-import PhoneInput from 'react-phone-number-input';
-import { useState } from 'react';
-import 'react-phone-number-input/style.css';
+import { motion, AnimatePresence } from "framer-motion";
+import PhoneInput from "react-phone-number-input";
+import { useState } from "react";
+import "react-phone-number-input/style.css";
 
-const VSL_PAGE_URL = '/vsl'; // Replace with your VSL page URL
-const GOOGLE_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyd0BaLkMe5jOV9-YLEj_9LkLmntnKujTvW2bhUtQjdBqRxBlVrS9vE9ZP0upXhyCe4Eg/exec'; // You'll need to replace this
+const VSL_PAGE_URL = "/vsl"; // Replace with your VSL page URL
+const GOOGLE_SHEET_WEBHOOK =
+  "https://script.google.com/macros/s/AKfycby250Xjp4ZEUMuXAugsRugBm51HrfNvtxElQgsHJLumAynangO0qhAcoEsNuyXEyqbxyg/exec"; // You'll need to replace this
 
 interface FormData {
   fullName: string;
@@ -13,41 +14,43 @@ interface FormData {
   phoneNumber: string;
 }
 
-const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+const Modal = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
   const [formData, setFormData] = useState<FormData>({
-    fullName: '',
-    email: '',
-    phoneNumber: ''
+    fullName: "",
+    email: "",
+    phoneNumber: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handlePhoneChange = (value?: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      phoneNumber: value || ''
+      phoneNumber: value || "",
     }));
   };
 
   const validateForm = (): boolean => {
     if (!formData.fullName.trim()) {
-      setError('Please enter your full name');
+      setError("Please enter your full name");
       return false;
     }
-    if (!formData.email.trim() || !formData.email.includes('@')) {
-      setError('Please enter a valid email address');
-      return false;
-    }
-    if (!formData.phoneNumber.trim()) {
-      setError('Please enter your phone number');
+    if (!formData.email.trim() || !formData.email.includes("@")) {
+      setError("Please enter a valid email address");
       return false;
     }
     return true;
@@ -55,47 +58,35 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
 
   const handleSubmit = async () => {
     try {
-      setError('');
       if (!validateForm()) return;
-  
       setIsLoading(true);
-  
+
       const formPayload = {
         timestamp: new Date().toISOString(),
         fullName: formData.fullName,
         email: formData.email,
-        phoneNumber: formData.phoneNumber
+        phoneNumber: formData.phoneNumber,
       };
-  
-      const response = await fetch(GOOGLE_SHEET_WEBHOOK, {
-        method: 'POST',
+
+      await fetch(GOOGLE_SHEET_WEBHOOK, {
+        method: "POST",
+        mode: "no-cors",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formPayload)
+        body: JSON.stringify(formPayload),
       });
-  
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-  
-      setFormData({
-        fullName: '',
-        email: '',
-        phoneNumber: ''
-      });
+
+      setFormData({ fullName: "", email: "", phoneNumber: "" });
       onClose();
       window.location.href = VSL_PAGE_URL;
-  
     } catch (err) {
-      setError('Something went wrong. Please try again.');
-      console.error('Form submission error:', err);
+      setError("Form submission failed. Please try again.");
+      console.error("Form submission error:", err);
     } finally {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <AnimatePresence>
@@ -129,16 +120,17 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
 
               <div className="p-8">
                 <p className="text-gray-400 text-sm font-medium text-center mb-2">
-                  FINALLY REVEALED
+                  FREE TRAINING
                 </p>
-                
+
                 <h2 className="text-2xl font-bold text-center text-white mb-6 leading-tight">
-                  Learn the New, Rapidly-Scalable Business Model That&apos;s Creating the Next Wave of Young Millionaires
+                  The No-BS online business model that turns your passion and
+                  expertise into profit without ads or any followers
                 </h2>
 
                 <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden">
                   <img
-                    src="/main.jpg"
+                    src="/image.png"
                     alt="Business Model"
                     className="w-full h-full object-cover"
                   />
@@ -161,7 +153,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
                     placeholder="Your Email*"
                     className="w-full px-4 py-3.5 rounded-lg bg-[#1A1A1A] text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
-                  
+
                   <div className="relative rounded-lg bg-[#1A1A1A] px-4 py-3.5">
                     <PhoneInput
                       international
@@ -177,12 +169,12 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
                     <p className="text-red-500 text-sm text-center">{error}</p>
                   )}
 
-                  <button 
+                  <button
                     onClick={handleSubmit}
                     disabled={isLoading}
                     className="w-full py-4 bg-[#0037FF] hover:bg-[#0037FF]/90 text-white rounded-lg font-bold text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? 'PROCESSING...' : 'WATCH FREE TRAINING'}
+                    {isLoading ? "PROCESSING..." : "WATCH FREE TRAINING"}
                   </button>
                 </div>
 

@@ -42,9 +42,13 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           </p>
 
           {/* Video Container */}
-          <VideoContainer />
+          <VideoContainer
+            previewSrc="/preview.mp4"
+            mainVideoSrc="/main.mp4"
+            isYoutube={false}
+          />
 
-          {/* Steps */}
+          {/* Steps 
           <p className="text-xl md:text-2xl mb-2 text-gray-300">
             Your Next Steps Are:
           </p>
@@ -70,7 +74,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
                 Schedule A Call
               </span>
             </div>
-          </div>
+          </div>*/}
         </div>
 
         {/* CTA Button */}
