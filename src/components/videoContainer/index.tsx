@@ -20,7 +20,7 @@ const VideoContainer: React.FC<VideoContainerProps> = ({
       /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
     return match && match[2].length === 11
-      ? `https://www.youtube.com/embed/${match[2]}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0`
+      ? `https://www.youtube.com/embed/${match[2]}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&cc_load_policy=0`
       : url;
   };
 

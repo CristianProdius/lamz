@@ -55,7 +55,7 @@ const VslSection = () => {
               {/* Offer Text */}
               <div className="text-center md:text-right">
                 <p className="text-xs sm:text-sm font-medium">
-                  New Year Offer: €850 instead of €1850!
+                  New Year Offer: €480 instead of €1280!
                 </p>
                 <p className="text-[10px] sm:text-xs text-gray-300">
                   Time Until Price Increase →
@@ -86,7 +86,7 @@ const VslSection = () => {
           </div>
           {/* Main Content */}
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-center text-4xl sm:text-6xl font-bold tracking-tighter mb-12">
+            <h1 className="text-center text-3xl sm:text-5xl font-bold tracking-tighter mb-12">
               Full demo & training video:
             </h1>
             {/* Video Container */}
@@ -102,17 +102,17 @@ const VslSection = () => {
             </p>
           </div>
           {/* CTA Button */}
-          <div className="flex justify-center mt-8 gap-4">
+          <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4">
             <button
               onClick={handleBookClick}
-              className="bg-white text-black sm:text-xl py-3 px-4 sm:py-5 sm:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+              className="bg-white text-black text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
             >
-              <span>Buy Now</span>
+              <span>Join Now</span>
               <ChevronRight />
             </button>
             <button
               onClick={handleBookClick}
-              className="bg-white text-black sm:text-xl py-3 px-4 sm:py-5 sm:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+              className="bg-white text-black text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
             >
               <span>Book A Meeting</span>
               <ChevronRight />
