@@ -12,6 +12,10 @@ const VslSection = () => {
     router.push("/contact");
   };
 
+  const handleJoinNowClick = () => {
+    window.location.href = "https://buy.stripe.com/8wMaES2IldeVgQ89AA";
+  };
+
   const [timeLeft, setTimeLeft] = useState({
     hours: 9,
     minutes: 5,
@@ -101,18 +105,18 @@ const VslSection = () => {
               above)
             </p>
           </div>
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4">
             <button
-              onClick={handleBookClick}
-              className="bg-white text-black text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+              onClick={handleJoinNowClick}
+              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span>Join Now</span>
               <ChevronRight />
             </button>
             <button
               onClick={handleBookClick}
-              className="bg-white text-black text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105"
+              className="bg-gradient-to-r from-gray-100 to-gray-300 text-black text-base sm:text-xl py-2 px-3 sm:py-3 sm:px-5 md:py-4 md:px-7 lg:py-5 lg:px-9 rounded-lg font-semibold inline-flex items-center justify-center gap-1 transform transition-transform duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span>Book A Meeting</span>
               <ChevronRight />
