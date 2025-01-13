@@ -42,13 +42,13 @@ const features = [
     icon: <Users className="w-8 h-8" />,
     title: "Expert Support Team",
     description:
-      "We do course creation better than anyone else. You&apos;re in good hands",
+      "We do course creation better than anyone else. You are in good hands",
   },
   {
     icon: <Puzzle className="w-8 h-8" />,
     title: "Platform Integration",
     description:
-      "Whatever platform you need connected, we&apos;ll configure and optimize it.",
+      "Whatever platform you need connected, we will configure and optimize it.",
   },
   {
     icon: <Brain className="w-8 h-8" />,

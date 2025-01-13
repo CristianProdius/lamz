@@ -13,7 +13,7 @@ const VslSection = () => {
   };
 
   const handleJoinNowClick = () => {
-    window.location.href = "https://buy.stripe.com/8wMaES2IldeVgQ89AA";
+    window.location.href = "https://buy.stripe.com/dR6cN0gzbcaR7fyeUV";
   };
 
   const [timeLeft, setTimeLeft] = useState({

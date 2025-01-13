@@ -10,7 +10,7 @@ const Footer = () => {
             © 2024 Course Creation Academy, LLC. All rights reserved
           </div>
           <ul className="flex justify-center gap-6">
-            <li>
+            {/*<li>
               <a
                 href="https://www.instagram.com/course.creation_academy?igsh=MWxhNmZlbHhtaGQ3YQ%3D%3D&utm_source=qr"
                 className="hover:text-purple-400 transition-all duration-300 transform hover:scale-110 inline-block"
@@ -19,7 +19,7 @@ const Footer = () => {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-            </li>
+            </li>*/}
             <li>
               <a
                 href="https://www.youtube.com/@theRealLAMZ"
