@@ -1,6 +1,7 @@
 "use client";
 import { ChevronRight } from "lucide-react";
-import VideoContainer from "../videoContainer";
+
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   onOpenModal: () => void;
@@ -42,39 +43,34 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           </p>
 
           {/* Video Container */}
-          <VideoContainer
-            previewSrc="/preview.mp4"
-            mainVideoSrc="/main.mp4"
-            isYoutube={false}
-          />
-
-          {/* Steps 
-          <p className="text-xl md:text-2xl mb-2 text-gray-300">
-            Your Next Steps Are:
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-16">
-            <div className="flex items-center gap-2 sm:gap-3 bg-[#3e1a84]/10 rounded-lg px-2 sm:px-4 py-2">
-              <div className="bg-[#fee370] w-5 sm:w-6 h-5 sm:h-6 rounded-full flex items-center justify-center">
-                <span className="text-xs sm:text-sm font-bold text-[#3e1a84]">
-                  1
-                </span>
+          <div className="vsl-container relative w-full max-w-3xl mx-auto mb-12">
+            <motion.div
+              className="relative rounded-xl p-2 bg-black/20"
+              animate={{
+                boxShadow: [
+                  "0 0 0 2px rgba(168, 85, 247, 0.4)",
+                  "0 0 0 2px rgba(0, 191, 255, 0.4)",
+                  "0 0 0 2px rgba(168, 85, 247, 0.4)",
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40">
+                <iframe
+                  src="https://player.vimeo.com/video/1052329231?h=0540f3a723&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="main"
+                ></iframe>
               </div>
-              <span className="text-sm sm:text-md md:text-lg font-medium whitespace-nowrap">
-                Watch This Video
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2 sm:gap-3 bg-[#3e1a84]/10 rounded-lg px-2 sm:px-4 py-2">
-              <div className="bg-[#fee370] w-5 sm:w-6 h-5 sm:h-6 rounded-full flex items-center justify-center">
-                <span className="text-xs sm:text-sm font-bold text-[#3e1a84]">
-                  2
-                </span>
-              </div>
-              <span className="text-sm sm:text-md md:text-lg font-medium whitespace-nowrap">
-                Schedule A Call
-              </span>
-            </div>
-          </div>*/}
+            </motion.div>
+          </div>
         </div>
 
         {/* CTA Button */}

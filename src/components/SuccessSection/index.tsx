@@ -15,17 +15,17 @@ import {
 
 const successStories = [
   {
-    videoSrc: "/video1.mp4",
+    videoId: "1052300064", // Replace with your Vimeo video ID
     achievement: "From 0 to 7,7920+ Students in Just 3 Months",
     thumbnail: "/thumbnail1.webp",
   },
   {
-    videoSrc: "/video2.mp4",
+    videoId: "1052300098", // Replace with your Vimeo video ID
     achievement: "$1000/M WITHOUT SHOWING MY FACE",
     thumbnail: "/thumbnail2.webp",
   },
   {
-    videoSrc: "/video3.mp4",
+    videoId: "1052300130", // Replace with your Vimeo video ID
     achievement: "SET IT & FORGET IT",
     thumbnail: "/thumbnail3.webp",
   },
@@ -86,9 +86,38 @@ const features = [
   },
 ];
 
-const SuccessSection = () => {
+const VimeoEmbed = ({ videoId }: { videoId: string }) => {
   return (
-    <section className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black   px-4 ">
+    <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+      <iframe
+        src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+        frameBorder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        title="video"
+      />
+    </div>
+  );
+};
+
+const SuccessSection = () => {
+  React.useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://player.vimeo.com/api/player.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  return (
+    <section className="bg-black text-white bg-gradient-to-b from-[#5d2ca8] to-black px-4">
       <div className="container mx-auto max-w-5xl">
         <div className="pb-24">
           <motion.div
@@ -98,7 +127,7 @@ const SuccessSection = () => {
             transition={{ duration: 0.6 }}
             className="py-12"
           >
-            <h3 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter  mb-16">
+            <h3 className="text-center text-5xl sm:text-6xl font-bold tracking-tighter mb-16">
               Recent Results We&apos;ve Gotten For Creators & Freelancers Just
               Like You:
             </h3>
@@ -112,17 +141,10 @@ const SuccessSection = () => {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="flex flex-col gap-6"
                 >
-                  <div className="aspect-video rounded-xl overflow-hidden bg-[#3b1c6a] shadow-lg">
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      poster={story.thumbnail}
-                    >
-                      <source src={story.videoSrc} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                  <div className="rounded-xl overflow-hidden bg-[#3b1c6a] shadow-lg">
+                    <VimeoEmbed videoId={story.videoId} />
                   </div>
-                  <h4 className="text-md  text-center">{story.achievement}</h4>
+                  <h4 className="text-md text-center">{story.achievement}</h4>
                 </motion.div>
               ))}
             </div>

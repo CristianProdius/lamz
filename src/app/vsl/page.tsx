@@ -1,10 +1,11 @@
 "use client";
 import { ChevronRight } from "lucide-react";
-import VideoContainer from "../../components/videoContainer";
+
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const VslSection = () => {
   const router = useRouter();
@@ -102,11 +103,34 @@ const VslSection = () => {
               Full demo & training video:
             </h1>
             {/* Video Container */}
-            <VideoContainer
-              previewSrc=""
-              mainVideoSrc="https://www.youtube.com/watch?v=OzNAGCQf0Hs"
-              isYoutube={true}
-            />
+            <div className="vsl-container relative w-full max-w-3xl mx-auto mb-12">
+              <motion.div
+                className="relative rounded-xl p-2 bg-black/20"
+                animate={{
+                  boxShadow: [
+                    "0 0 0 2px rgba(168, 85, 247, 0.4)",
+                    "0 0 0 2px rgba(0, 191, 255, 0.4)",
+                    "0 0 0 2px rgba(168, 85, 247, 0.4)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40">
+                  <iframe
+                    src="https://player.vimeo.com/video/1052310589?h=a327fa597e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    className="absolute top-0 left-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="main"
+                  ></iframe>
+                </div>
+              </motion.div>
+            </div>
 
             <p className="text-xl md:text-2xl mb-12 text-gray-300 mt-4">
               (do not join the course before watching the free training video
