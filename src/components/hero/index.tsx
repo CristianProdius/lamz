@@ -16,23 +16,12 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
 
       player.setVolume(1); // Set volume to 100%
 
-      const loopFirstFourSeconds = () => {
-        player.setCurrentTime(0).then(() => {
-          player.play();
-        });
-
-        player.on("timeupdate", (data) => {
-          if (data.seconds >= 4) {
-            player.setCurrentTime(0);
-          }
-        });
-      };
-
-      player.on("loaded", loopFirstFourSeconds);
+      player.on("loaded", () => {
+        player.play();
+      });
 
       return () => {
-        player.off("loaded", loopFirstFourSeconds);
-        player.off("timeupdate");
+        player.unload();
       };
     }
   }, []);
