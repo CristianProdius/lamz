@@ -4,6 +4,7 @@ import VideoContainer from "../../components/videoContainer";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const VslSection = () => {
   const router = useRouter();
@@ -51,8 +52,15 @@ const VslSection = () => {
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-12 px-4 w-full gap-4 md:gap-8">
             {/* Logo */}
+
             <div className="w-full md:w-auto flex justify-center md:justify-start">
-              <img src="/logo.png" alt="logo" className="h-8 md:h-12" />
+              <Image
+                src="/logo.webp"
+                alt="logo"
+                className="h-8 md:h-12"
+                width={48}
+                height={48}
+              />
             </div>
             {/* Timer Section */}
             <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-8">

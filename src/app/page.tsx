@@ -14,7 +14,6 @@ import SuccessSection from "@/components/SuccessSection";
 import TeamMember from "@/components/lamz";
 import { Testimonials } from "@/components/testimonials";
 import OnlineEducationGraph from "@/components/graph";
-import Phases from "@/components/steps";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +43,7 @@ export default function Home() {
       <SuccessSection />
       <IncludedSection onOpenModal={handleModalOpen} />
       <OnlineEducationGraph />
-      <Phases />
+
       <TeamMember />
       <Testimonials />
       <Faq />

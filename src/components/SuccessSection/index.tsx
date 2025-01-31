@@ -17,17 +17,17 @@ const successStories = [
   {
     videoSrc: "/video1.mp4",
     achievement: "From 0 to 7,7920+ Students in Just 3 Months",
-    thumbnail: "/thumbnail1.png",
+    thumbnail: "/thumbnail1.webp",
   },
   {
     videoSrc: "/video2.mp4",
     achievement: "$1000/M WITHOUT SHOWING MY FACE",
-    thumbnail: "/thumbnail2.png",
+    thumbnail: "/thumbnail2.webp",
   },
   {
     videoSrc: "/video3.mp4",
     achievement: "SET IT & FORGET IT",
-    thumbnail: "/thumbnail3.png",
+    thumbnail: "/thumbnail3.webp",
   },
 ];
 

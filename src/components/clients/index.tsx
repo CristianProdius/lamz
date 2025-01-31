@@ -31,7 +31,7 @@ const Clients = () => {
             {logos.map((logo) => (
               <React.Fragment key={logo}>
                 <Image
-                  src={`/clients/${logo}.png`}
+                  src={`/clients/${logo}.webp`}
                   className="h-6 w-auto object-contain max-w-none "
                   width={0}
                   height={0}
@@ -44,7 +44,7 @@ const Clients = () => {
             {logos.map((logo) => (
               <React.Fragment key={`second-${logo}`}>
                 <Image
-                  src={`/clients/${logo}.png`}
+                  src={`/clients/${logo}.webp`}
                   className="h-6 w-auto object-contain max-w-none "
                   width={0}
                   height={0}

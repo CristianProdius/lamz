@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const clientPic = [
-  { src: "/clientPicture/1.png", alt: "client" },
-  { src: "/clientPicture/2.png", alt: "client" },
-  { src: "/clientPicture/3.png", alt: "client" },
-  { src: "/clientPicture/4.png", alt: "client" },
+  { src: "/clientPicture/1.webp", alt: "client" },
+  { src: "/clientPicture/2.webp", alt: "client" },
+  { src: "/clientPicture/3.webp", alt: "client" },
+  { src: "/clientPicture/4.webp", alt: "client" },
 ];
 
 // Star rating animation component

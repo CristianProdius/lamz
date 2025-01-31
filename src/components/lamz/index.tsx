@@ -47,7 +47,7 @@ const TeamMember = () => {
 
             <div className="relative flex flex-end">
               <Image
-                src="/lamz.jpg"
+                src="/lamz.webp"
                 alt="Team member portrait"
                 className="w-full max-w-[300px] rounded-lg"
                 width={300}

@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import PhoneInput from "react-phone-number-input";
+import Image from "next/image";
+
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 
@@ -34,13 +35,6 @@ const Modal = ({
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }));
-  };
-
-  const handlePhoneChange = (value?: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      phoneNumber: value || "",
     }));
   };
 
@@ -129,10 +123,11 @@ const Modal = ({
                 </h2>
 
                 <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden">
-                  <img
-                    src="/image.png"
+                  <Image
+                    src="/path/to/your/image.jpg"
                     alt="Business Model"
-                    className="w-full h-full object-cover"
+                    layout="fill"
+                    objectFit="cover"
                   />
                 </div>
 
@@ -153,17 +148,6 @@ const Modal = ({
                     placeholder="Your Email*"
                     className="w-full px-4 py-3.5 rounded-lg bg-[#1A1A1A] text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
-
-                  {/**   <div className="relative rounded-lg bg-[#1A1A1A] px-4 py-3.5">
-                    <PhoneInput
-                      international
-                      countryCallingCodeEditable={false}
-                      defaultCountry="US"
-                      value={formData.phoneNumber}
-                      onChange={handlePhoneChange}
-                      className="[&_.PhoneInputCountrySelect]:bg-[#1A1A1A] [&_.PhoneInputCountrySelect]:text-white [&_.PhoneInputCountrySelect]:border-none [&_.PhoneInputCountrySelect]:rounded-lg [&_.PhoneInputCountrySelect]:text-sm [&_.PhoneInputCountrySelect]:py-1 [&_.PhoneInputCountrySelect]:pl-2 [&_.PhoneInputCountrySelect]:pr-6 [&_.PhoneInputCountrySelect]:max-w-[90px] [&_.PhoneInputCountrySelect_option]:bg-[#1A1A1A] [&_.PhoneInputCountrySelect_option]:text-white [&_.PhoneInputCountrySelect_option]:text-sm [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:text-white [&_.PhoneInputInput]:text-sm [&_.PhoneInputCountrySelectArrow]:w-2 [&_.PhoneInputCountrySelectArrow]:h-2 [&_.PhoneInputCountrySelectArrow]:text-white [&_.PhoneInputCountrySelectArrow]:opacity-60 hover:[&_.PhoneInputCountrySelectArrow]:opacity-100 [&_.PhoneInputCountrySelect]:h-40"
-                    />
-                  </div> */}
 
                   {error && (
                     <p className="text-red-500 text-sm text-center">{error}</p>
