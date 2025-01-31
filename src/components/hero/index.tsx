@@ -1,13 +1,42 @@
 "use client";
 import { ChevronRight } from "lucide-react";
-
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import Player from "@vimeo/player";
 
 interface HeroSectionProps {
   onOpenModal: () => void;
 }
 
 const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
+  useEffect(() => {
+    const iframe = document.querySelector("iframe");
+    if (iframe) {
+      const player = new Player(iframe);
+
+      player.setVolume(1); // Set volume to 100%
+
+      const loopFirstFourSeconds = () => {
+        player.setCurrentTime(0).then(() => {
+          player.play();
+        });
+
+        player.on("timeupdate", (data) => {
+          if (data.seconds >= 4) {
+            player.setCurrentTime(0);
+          }
+        });
+      };
+
+      player.on("loaded", loopFirstFourSeconds);
+
+      return () => {
+        player.off("loaded", loopFirstFourSeconds);
+        player.off("timeupdate");
+      };
+    }
+  }, []);
+
   return (
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_45%,#4f21A1_65%,#a46edb_82%)] pt-4 md:pt-8 pb-[72px] relative overflow-clip px-4">
       {/* Background Image */}
@@ -61,7 +90,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             >
               <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40">
                 <iframe
-                  src="https://player.vimeo.com/video/1052329231?h=0540f3a723&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&muted=false"
+                  src="https://player.vimeo.com/video/1052329231?h=0540f3a723&badge=0&autopause=0&player_id=0&app_id=58479&muted=false"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
