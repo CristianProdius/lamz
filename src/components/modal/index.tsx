@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 
-const VSL_PAGE_URL = "/vsl"; // Replace with your VSL page URL
+const VSL_PAGE_URL = "https://lamzcoursecreation.com//vsl"; // Replace with your VSL page URL
 const GOOGLE_SHEET_WEBHOOK =
   "https://script.google.com/macros/s/AKfycby250Xjp4ZEUMuXAugsRugBm51HrfNvtxElQgsHJLumAynangO0qhAcoEsNuyXEyqbxyg/exec"; // You'll need to replace this
 
@@ -124,7 +124,7 @@ const Modal = ({
 
                 <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden">
                   <Image
-                    src="/path/to/your/image.jpg"
+                    src="/image.webp"
                     alt="Business Model"
                     layout="fill"
                     objectFit="cover"
