@@ -121,13 +121,14 @@ const Modal = ({
                   The No-BS online business model that turns your passion and
                   expertise into profit without ads or any followers
                 </h2>
-
-                <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden">
+                <div className="aspect-video bg-orange-900/20 rounded-lg mb-8 overflow-hidden w-full">
                   <Image
                     src="/image.webp"
                     alt="Business Model"
-                    layout="fill"
-                    objectFit="cover"
+                    layout="responsive"
+                    width={700} // Adjust the width and height to match your image's aspect ratio
+                    height={475} // Adjust the width and height to match your image's aspect ratio
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
