@@ -61,7 +61,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             >
               <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40">
                 <iframe
-                  src="https://player.vimeo.com/video/1052329231?h=0540f3a723&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  src="https://player.vimeo.com/video/1052329231?h=0540f3a723&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&muted=false"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
