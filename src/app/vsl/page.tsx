@@ -68,7 +68,7 @@ const VslSection = () => {
               {/* Offer Text */}
               <div className="text-center md:text-right">
                 <p className="text-xs sm:text-sm font-medium">
-                  New Year Offer: €480 instead of €1280!
+                  Valentines Day Offer: €480 instead of €1280!
                 </p>
                 <p className="text-[10px] sm:text-xs text-gray-300">
                   Time Until Price Increase →
