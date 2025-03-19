@@ -44,9 +44,6 @@ const VslSection = () => {
                 <p className="text-xs sm:text-sm font-medium">
                   480$ instead of 1280$ for the first 500 members
                 </p>
-                <p className="text-[10px] sm:text-xs text-gray-300">
-                  Time Until Price Increase →
-                </p>
               </div>
             </div>
           </div>
