@@ -2,7 +2,7 @@
 import { ChevronRight } from "lucide-react";
 
 import Footer from "@/components/footer";
-import { useEffect, useState } from "react";
+
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -17,32 +17,6 @@ const VslSection = () => {
   const handleJoinNowClick = () => {
     window.location.href = "https://buy.stripe.com/dR6cN0gzbcaR7fyeUV";
   };
-
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 9,
-    minutes: 5,
-    seconds: 53,
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        }
-        if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        }
-        if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        clearInterval(timer);
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div>
@@ -73,27 +47,6 @@ const VslSection = () => {
                 <p className="text-[10px] sm:text-xs text-gray-300">
                   Time Until Price Increase →
                 </p>
-              </div>
-              {/* Timer */}
-              <div className="flex gap-2">
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl md:text-4xl font-bold">
-                    {timeLeft.hours.toString().padStart(2, "0")}
-                  </span>
-                  <span className="text-[10px] md:text-xs">HOURS</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl md:text-4xl font-bold">
-                    {timeLeft.minutes.toString().padStart(2, "0")}
-                  </span>
-                  <span className="text-[10px] md:text-xs">MINUTES</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl md:text-4xl font-bold">
-                    {timeLeft.seconds.toString().padStart(2, "0")}
-                  </span>
-                  <span className="text-[10px] md:text-xs">SECONDS</span>
-                </div>
               </div>
             </div>
           </div>
